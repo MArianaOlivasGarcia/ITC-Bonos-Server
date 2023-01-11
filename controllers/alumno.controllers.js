@@ -16,7 +16,7 @@ const login = async(req, res = response) => {
 
     try {
     
-        const recepcion = await Recepcion.findOne({ semestre: "ENE-JUN-22" })
+        const recepcion = await Recepcion.findOne({ semestre: "AGO-DIC-22" })
 
         if ( !recepcion ) {
             return res.status(404).json({

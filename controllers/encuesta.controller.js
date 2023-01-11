@@ -82,11 +82,11 @@ const create = async(req, res = response) => {
         /* CALIFICAR */
         alumnoUpdate.puntos = puntos;
 
-        const foliodb = await Counter.findOne({periodo: 'ENE-JUN-2022'})
+        const foliodb = await Counter.findOne({periodo: 'AGO-DIC-2022'})
         
           
         // Generar folio
-        alumnoUpdate.folio = `ENEJUN22${ alumnoUpdate.nombre.charAt(0) }${ alumnoUpdate.paterno && alumnoUpdate.paterno.charAt(0) }${ alumnoUpdate.materno && alumnoUpdate.materno.charAt(0) }${ foliodb.currentValue.toString().padStart(4, "0") }` ;
+        alumnoUpdate.folio = `AGODIC22${ alumnoUpdate.nombre.charAt(0) }${ alumnoUpdate.paterno && alumnoUpdate.paterno.charAt(0) }${ alumnoUpdate.materno && alumnoUpdate.materno.charAt(0) }${ foliodb.currentValue.toString().padStart(4, "0") }` ;
 
         foliodb.currentValue = foliodb.currentValue + 1;
 
